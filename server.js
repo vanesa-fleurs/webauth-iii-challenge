@@ -1,10 +1,10 @@
 const express = require('express')
-const server = express();
-const jwt = require('jsonwebtoken')
 const helmet = require('helmet')
-
+const cors = require('cors')
+require('dotenv').config()
+// console.log('secret!', process.env.JWT_SECRET);
 const userRouter = require('./user/user-router.js')
-
+const server = express();
 
 server.use(express.json())
 server.use(helmet())
